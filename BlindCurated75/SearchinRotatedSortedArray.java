@@ -3,7 +3,8 @@ package BlindCurated75;
 public class SearchinRotatedSortedArray {
   public static int search(int[] nums, int target) {
     int minIdx = findMinIdx(nums);
-    if (target == nums[minIdx]) return minIdx;
+    if (target == nums[minIdx])
+      return minIdx;
 
     int n = nums.length;
     // 0 --- minIdx --- n-1 // target?
@@ -48,11 +49,11 @@ public class SearchinRotatedSortedArray {
   }
 
   public static void main(String[] args) {
-    //  1 <= nums.length <= 5000
-    //  -10^4 <= nums[i] <= 10^4
-    //  All values of nums are unique.
-    //  nums is guranteed to be rotated at some pivot.
-    //  -10^4 <= target <= 10^4
+    // 1 <= nums.length <= 5000
+    // -10^4 <= nums[i] <= 10^4
+    // All values of nums are unique.
+    // nums is guranteed to be rotated at some pivot.
+    // -10^4 <= target <= 10^4
 
     int[] nums1 = {4, 5, 6, 7, 0, 1, 2};
     int[] nums2 = {1};

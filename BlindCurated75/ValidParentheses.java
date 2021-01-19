@@ -17,7 +17,8 @@ public class ValidParentheses {
           stack[head++] = ']';
           break;
         default:
-          if (head == 0 || stack[--head] != c) return false;
+          if (head == 0 || stack[--head] != c)
+            return false;
           break;
       }
     }

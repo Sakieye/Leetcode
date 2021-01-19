@@ -4,8 +4,10 @@ public class IsPalindrome {
   public static boolean isPalindrome(String s) {
     int n = s.length();
 
-    if (n == 0) return false;
-    if (n == 1) return true;
+    if (n == 0)
+      return false;
+    if (n == 1)
+      return true;
 
     int l = n / 2;
     int r = l;

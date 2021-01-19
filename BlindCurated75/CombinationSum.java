@@ -12,19 +12,17 @@ public class CombinationSum {
     return res;
   }
 
-  private static void backtrack(
-      List<List<Integer>> res, List<Integer> tempList, int[] nums, int remain, int start) {
-    if (remain < 0) return;
-    else if (remain == 0) res.add(new LinkedList<>(tempList)); // 用new，避免被其他步驟remove修改掉
+  private static void backtrack(List<List<Integer>> res, List<Integer> tempList, int[] nums,
+      int remain, int start) {
+    if (remain < 0)
+      return;
+    else if (remain == 0)
+      res.add(new LinkedList<>(tempList)); // 用new，避免被其他步驟remove修改掉
     else {
       for (int i = start; i < nums.length; i++) {
         tempList.add(nums[i]);
-        backtrack(
-            res,
-            tempList,
-            nums,
-            remain - nums[i],
-            i); // not i + 1 because we can reuse same elements
+        backtrack(res, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same
+                                                             // elements
         tempList.remove(tempList.size() - 1);
       }
     }

@@ -2,7 +2,6 @@ package BlindCurated75;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.random;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,7 +13,8 @@ public class ThreeSum {
     if (n >= 3) {
       Arrays.sort(nums);
       for (int i = 0; i < n - 2; i++) {
-        if (nums[i] > 0) break;
+        if (nums[i] > 0)
+          break;
         if (i == 0 || nums[i] != nums[i - 1]) { // i = 0初始掃描，其後都只要確認是否跟前一位相同，若相同則肯定在之前的掃描就已加入res
           int li = i + 1;
           int ri = n - 1;
@@ -24,8 +24,10 @@ public class ThreeSum {
             if (sum == target) {
               res.add(Arrays.asList(nums[i], nums[li], nums[ri]));
               // 因已檢驗nums[li] + nums[ri]，其他和這兩個相同的數值，都直接跳過
-              while (li < ri && nums[li] == nums[li + 1]) li++;
-              while (li < ri && nums[ri] == nums[ri - 1]) ri--;
+              while (li < ri && nums[li] == nums[li + 1])
+                li++;
+              while (li < ri && nums[ri] == nums[ri - 1])
+                ri--;
               li++;
               ri--;
             } else if (sum < target) {

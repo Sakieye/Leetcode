@@ -12,10 +12,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
       char c = s.charAt(i);
       if (charMap.containsKey(c)) { // 重複char出現
         tempMaxLen = Math.max(tempMaxLen, i - lastNonRepeatStrStart);
-        lastNonRepeatStrStart =
-            Math.max(
-                charMap.get(c) + 1,
-                lastNonRepeatStrStart); // abbcad，巡到i=2的b時，應更新為上一次b位置+1，但巡到i=4的a時，不應是上一次a位置+1，因其<上一次b位置+1
+        lastNonRepeatStrStart = Math.max(charMap.get(c) + 1, lastNonRepeatStrStart); // abbcad，巡到i=2的b時，應更新為上一次b位置+1，但巡到i=4的a時，不應是上一次a位置+1，因其<上一次b位置+1
       }
       charMap.put(c, i);
     }

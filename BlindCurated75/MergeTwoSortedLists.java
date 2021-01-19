@@ -20,15 +20,11 @@ public class MergeTwoSortedLists {
   }
 
   public static void main(String[] args) {
-    System.out.println(
-        mergeTwoLists(
-            new ListNode(1, new ListNode(2, new ListNode(4))),
-            new ListNode(1, new ListNode(3, new ListNode(4)))));
+    System.out.println(mergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4))),
+        new ListNode(1, new ListNode(3, new ListNode(4)))));
     System.out.println(mergeTwoLists(new ListNode(), new ListNode()));
     System.out.println(mergeTwoLists(new ListNode(), new ListNode(0)));
-    System.out.println(
-        mergeTwoLists(
-            new ListNode(1, new ListNode(2, new ListNode(4))),
-            new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(99))))));
+    System.out.println(mergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4))),
+        new ListNode(1, new ListNode(3, new ListNode(4, new ListNode(99))))));
   }
 }
