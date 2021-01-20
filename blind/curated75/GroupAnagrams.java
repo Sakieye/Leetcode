@@ -9,16 +9,13 @@ import java.util.Map;
 public class GroupAnagrams {
 
   public static void main(String[] args) {
-    String[] strs1 = {"eat", "tea", "tan", "ate", "nat", "bat"};
-    String[] strs2 = {""};
-    String[] strs3 = {"a"};
+    String[] strs1 = { "eat", "tea", "tan", "ate", "nat", "bat" };
+    String[] strs2 = { "" };
+    String[] strs3 = { "a" };
     List strss = new LinkedList();
     strss.add(strs1);
     strss.add(strs2);
     strss.add(strs3);
-
-    int a = 'a' - 1;
-    System.out.println(a);
 
     strss.forEach(strs -> System.out.println(groupAnagrams((String[]) strs)));
   }
