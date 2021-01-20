@@ -1,4 +1,4 @@
-package BlindCurated75;
+package blind.curated75;
 
 public class ValidParentheses {
   public static boolean isValid(String s) {

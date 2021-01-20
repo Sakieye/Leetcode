@@ -1,4 +1,4 @@
-package BlindCurated75;
+package blind.curated75;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.random;
