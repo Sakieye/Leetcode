@@ -3,18 +3,26 @@
 #
 # [139] Word Break
 #
+from functools import lru_cache
 
 # @lc code=start
 class Solution:
     def wordBreak(self, s: str, words: list[str]) -> bool:
-        # ok[i] tells whether s[:i] can be built.
-        ok = [True]
-        w_len = max(map(len, words + [""]))
-        words = set(words)
-        for i in range(1, len(s) + 1):
-            # before j can be built and s[j:i] can be built -> before i can be built
-            ok += (any(ok[j] and s[j:i] in words for j in range(max(0, i - w_len), i)),)
-        return ok[-1]
+        n = len(s)
+
+        @lru_cache(maxsize=n + 1)
+        def word(i):
+            if i == n:
+                return True
+            for w in words:
+                w_len = len(w)
+                new_idx = i + w_len
+                if new_idx <= n and s[i:new_idx] == w:
+                    if word(new_idx):
+                        return True
+            return False
+
+        return word(0)
 
 
 # @lc code=end
